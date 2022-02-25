@@ -17,18 +17,18 @@ export default () => {
     <Routes>
       <Route
         path="*"
-        element={<Navigate to={authenticated ? "/test_chat/chat" : "/test_chat"} />}
+        element={<Navigate to={authenticated ? "/chat" : "/"} />}
       />
       {
         authenticated ?
           <Route
             exact
-            path='/test_chat/chat'
+            path='/chat'
             element={<ChatContainer />}
           />
           : <Route
             exact
-            path='/test_chat'
+            path='/'
             element={<Signin />}
           />
       }

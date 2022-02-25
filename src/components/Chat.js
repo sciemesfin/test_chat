@@ -36,8 +36,9 @@ export default function Chat(props) {
         setSent(!sent)
     }
 
-
-    return <div className="chat">
+    return <div className="chat"
+        style={{ width: window.screen.width / 1.3 }}
+    >
         <div className="contact bar">
             <div container style={{
                 display: "flex", justifyContent: "space-between", alignItems: "center"

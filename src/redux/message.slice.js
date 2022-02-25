@@ -1,12 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
 import "../services/firebase.config";
-import { collection, addDoc, where, query, getDocs } from "firebase/firestore";
+import { collection, addDoc, query, getDocs } from "firebase/firestore";
 import { db } from "../services/firebase.config";
-import auth from "../services/auth";
 
-const provider = new GoogleAuthProvider();
 
 const initialState = {
     messages: []

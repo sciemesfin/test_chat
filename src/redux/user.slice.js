@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit"
-
 import "../services/firebase.config";
 import auth from "../services/auth";
 

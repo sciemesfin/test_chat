@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Navigate, Route, Routes } from "react-router-dom";
+import Signin from "./pages/Signin";
+import ChatContainer from "./pages/ChatContainer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { useSelector } from 'react-redux'
+import { hasLoggedIn } from "./redux/user.slice";
+
+
+export default () => {
+  const isLoggedIn = useSelector(hasLoggedIn);
+  const [authenticated, setAuthenticated] = useState(isLoggedIn)
+  useEffect(() => checkUser(), [isLoggedIn])
+  const checkUser = async () => setAuthenticated(await isLoggedIn)
+
+  return <Router >
+    <Routes>
+      <Route
+        path="*"
+        element={<Navigate to={authenticated ? "/chat" : "/"} />}
+      />
+      {
+        authenticated ?
+          <Route
+            exact
+            path='/chat'
+            element={<ChatContainer />}
+          />
+          : <Route
+            exact
+            path='/'
+            element={<Signin />}
+          />
+      }
+
+    </Routes>
+  </Router>
 }
-
-export default App;

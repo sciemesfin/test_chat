@@ -119,9 +119,17 @@ body, html {
  .contacts:hover {
    transform: translate(-12rem, -50%) !important;
  }
- 
+ .btn-center{
+   position: relative;
+   top: 50%;
+   left: 25% !important;
+ }
 }
-
+ .btn-center{
+   position: relative;
+   top: 50%;
+   left: 50%;
+ }
 .chat {
   position: relative;
   display: flex;

@@ -54,22 +54,20 @@ export default function Signin() {
                 position: "relative",
             }}>
 
-            <button className="btn" block variant="contained" color="primary"
-                onClick={launchSignin}
-                style={{
-                    position: "absolute", top: "50%", left: "50%",
-                    margin: "auto", height: 40,
-                }}
-            >
-                <div style={{ display: "flex", alignItems: "center" }}>
-                    <img src={require('../assets/images/google.png')}
-                        style={{ width: 30, height: 30, paddingRight: 10 }}
-                        alt="google-logo"
-                    />
-                    <p> Sign in with Google</p>
-                </div>
+            <div className="btn-center">
+                <button className="btn" block variant="contained" color="primary"
+                    onClick={launchSignin} style={{ height: 45 }}
+                >
+                    <div style={{ display: "flex", alignItems: "center", }}>
+                        <img src={require('../assets/images/google.png')}
+                            style={{ width: 30, height: 30, paddingRight: 10 }}
+                            alt="google-logo"
+                        />
+                        <p> Sign in with Google</p>
+                    </div>
 
-            </button>
+                </button>
+            </div>
 
         </div>
     </div>

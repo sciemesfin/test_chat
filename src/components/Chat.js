@@ -51,7 +51,8 @@ export default function Chat(props) {
                     </div>}
                 </div>
                 <div item>
-                    <button className="btn" variant="contained" color="primary"
+                    <button className="btn"
+                        variant="contained" color="primary"
                         onClick={() => {
                             localStorage.clear()
                             window.location.reload()
@@ -64,7 +65,6 @@ export default function Chat(props) {
 
         </div>
         <div className="messages" id="chat">
-
             <div>
                 {
                     messages.map((x, i) => <div key={i} className="contact bar">
